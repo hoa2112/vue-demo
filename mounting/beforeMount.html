@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>beforeMount</title>
+</head>
+</html>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="myText">
+    This is my text
+</div>
+
+<script>
+    new Vue ({
+        el: '#myText',
+        beforeMount: function() {
+            console.log(this);
+            console.log(document.getElementById('myText').innerHTML)
+        }
+    });
+</script>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>destroyed</title>
+</head>
+</html>
+
+<script>
+    import MyCreepyAnalyticsService from './somewhere-bad'
+
+    new Vue({
+        destroyed() {
+            console.log(this) // There's practically nothing here!
+            MyCreepyAnalyticsService.informService('Component destroyed. All assets move in on target on my mark.')
+        }
+    });
+</script>

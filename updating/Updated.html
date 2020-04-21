@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>updated</title>
+</head>
+</html>
+
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<div id="myText">
+    <p ref="dom-element">{{counter}}</p>
+
+    <button @click='myStopFunction()'>Stop time</button>
+</div>
+<script>
+    new Vue({
+        el: "#myText",
+        data: {
+            counter: 0
+        },
+        methods: {
+            myStopFunction: function() {
+                alert('stop')
+            }
+        },
+
+        beforeUpdate: function () {
+            console.log(+this.$refs['dom-element'].textContent === this.counter)
+        },
+
+        created: function() {
+            var myVar =  setInterval(() => {
+                this.counter++
+            }, 1000);
+        },
+    });
+
+
+</script>

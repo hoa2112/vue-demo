@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>beforeDestroy</title>
+</head>
+</html>
+<script src="https://unpkg.com/vue/dist/vue.js"></script>
+
+<script>
+    new Vue({
+        data: {
+            variableLeakMem: 'When component destroy, please remove me'
+        },
+
+        beforeDestroy() {
+            // Loại bỏ variable hay các event listening sẽ đỡ lãng phí bộ nhớ
+            this.variableLeakMem = null
+            delete this.variableLeakMem
+        }
+    })
+</script>

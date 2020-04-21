@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>index vuejs</title>
+</head>
+<body>
+    <div id='div1' v-bind:title="div_title">
+        {{hello_message}}
+    </div>
+
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+    var v1 = new Vue({
+        el: "#div1",
+        data: {
+            hello_message: "Hello, there welcome to VueJS world",
+            div_title: "This is my intro div",
+        },
+
+        beforeCreate: function(){
+            this.hello_message = "New BeforeCreate";
+            console.log('Before Create');
+        },
+
+        created: function(){
+            this.hello_message = "Message Created";
+            console.log('Created');
+        },
+        beforeMount: function(){
+            this.hello_message = "Message BeforeMount";
+            console.log('Before Mount');
+        },
+        mounted: function(){
+            this.hello_message = "New Mounted";
+            console.log('Mounted');
+        },
+        beforeUpdate: function(){
+            this.hello_message = "New BeforeUpdate";
+
+            console.log('Before Update');
+        },
+        updated: function(){
+            this.hello_message = "New Updated";
+            console.log('Updated');
+        },
+        beforeDestroy: function(){
+            console.log('Before Destroy');
+        },
+        destroyed: function(){
+            console.log('Destroyed');
+        },
+
+    });
+
+    v1.$destroy();
+
+    // v1.$data.hello_message = 'init';
+    // To fire update
+
+    // This can be invoked to destroy the object, which will fire the destroy hook
+    //
+</script>
