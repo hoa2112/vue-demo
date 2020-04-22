@@ -9,9 +9,10 @@ $userData = mysqli_query($con,"select password from users WHERE email = '"  .$da
 $row = mysqli_fetch_assoc($userData);
 
 if (md5($data->password) == $row['password']) {
-    echo 'ok';
+    $response = 1;
 } else {
-    echo 'fail';
+    $response = 0;
 }
 
+echo json_encode($response);
 exit;

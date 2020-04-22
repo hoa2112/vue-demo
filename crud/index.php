@@ -59,12 +59,15 @@
                         password   : this.password,
                     })
                     .then(function (response) {
-                        toastr.success('','Đăng nhập thành công');
+                        if (response.data == 1) {
+                            toastr.success('','Đăng nhập thành công');
 
-                        var interval_obj = setInterval(function(){
-                            window.location.href = './user/';
-                        }, 2000);
-
+                            var interval_obj = setInterval(function(){
+                                window.location.href = './user/';
+                            }, 2000);
+                        } else {
+                            toastr.error('','Email hoặc Password không đúng');
+                        }
                     })
                     .catch(function (error) {
                         console.log(error);

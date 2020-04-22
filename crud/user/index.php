@@ -29,7 +29,7 @@
             <td><input type='text' v-model='user.username' class="form-control" :class="'input'+index" readonly></td>
             <td><input type='text' v-model='user.name' class="form-control" :class="'input'+index" readonly></td>
             <td><input type='text' v-model='user.email' class="form-control" :class="'input'+index" readonly></td>
-            <td><input type='password' v-model='user.password' class="form-control" readonly></td>
+            <td><input type='password' v-model='user.password' class="form-control" :class="'input'+index" readonly></td>
             <td><input type='button' value='Edit' @click="showupdate(index);" class="btn btn-outline-warning" :id="'edit'+index" :style="button">
                 <input type='button' value='Update' @click='updateRecord(index,user.id);' class="btn btn-outline-primary" :id="'update'+index" :style="[button, dis_none]">
                 <input type='button' value='Delete' @click='deleteRecord(index,user.id)'  class="btn btn-outline-danger" :style="button"></td>
