@@ -9,16 +9,49 @@
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-<div id="myText">
-    This is my text
+
+<div id="showdata">
+    {{ message }}
+    <br>
+    {{ a }}
 </div>
 
+<!--// Thường dùng để gọi lại hàm List để show ra luôn trình duyệt-->
+
+<!--<template>-->
+    <div id="myText">
+        This is my text
+    </div>
+<!--</template>-->
+
 <script>
-    new Vue ({
-        el: '#myText',
-        beforeMount: function() {
-            console.log(this);
+    new Vue({
+        el: '#showdata',
+        data() {
+            return {
+                message: 'Hello World'
+            }
+        },
+        beforeMount() {
+            this.a = this.message;
+
+            console.log(this.$el);
+
             console.log(document.getElementById('myText').innerHTML)
         }
-    });
+    })
 </script>
+
+<!--<template>-->
+<!--<div id="data">-->
+    <!--<h1>This is title, we can access it after beforeMount()</h1>-->
+<!--</div>-->
+<!--</template>-->
+<!--<script>-->
+    <!--new Vue ({-->
+        <!--// el: '#data',-->
+        <!--beforeMount() {-->
+            <!--console.log(this.$el) // This is title, we can access it after beforeMount()-->
+        <!--}-->
+    <!--})-->
+<!--</script>-->

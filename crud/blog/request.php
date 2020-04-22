@@ -15,6 +15,8 @@
             'title_post'  => mb_convert_encoding($value['title_post'], 'UTF-8', 'UTF-8'),
             'description' => mb_convert_encoding($value['description'], 'UTF-8', 'UTF-8'),
             'content'     => mb_convert_encoding($value['content'], 'UTF-8', 'UTF-8'),
+            'date_added'     => mb_convert_encoding($value['date_added'], 'UTF-8', 'UTF-8'),
+            'author'     => mb_convert_encoding($value['author'], 'UTF-8', 'UTF-8'),
         ];
     }
 

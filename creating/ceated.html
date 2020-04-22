@@ -9,23 +9,25 @@
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
+ <!--// Thường dùng để gọi lại hàm List để show ra luôn trình duyệt-->
+
 <div id="myText">
     {{ message }}
+    <br>
+    {{ a }}
 </div>
 
 
 <script>
-    // Thường dùng để gọi lại hàm List để show ra luôn trình duyệt
-
-    new Vue ({
+    new Vue({
         el: "#myText",
         data: {
-            message: 'Hello World'
+            message: 'Hello World',
+            a : '',
         },
         created: function() {
-            console.log(this.message);
-
-            console.log(document.getElementById('hookCreated').innerHTML)
+            this.a = this.message;
+            console.log(this.message)
         }
     })
 </script>

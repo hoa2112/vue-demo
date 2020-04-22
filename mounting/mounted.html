@@ -9,16 +9,14 @@
 
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
-<div id="myText">
+<template>
     <h1>This is title, we can access it after beforeMount()</h1>
-</div>
+</template>
 
 <script>
-    new Vue({
-        el:'#myText',
+    export default {
         mounted() {
-            console.log(this.$el);
             console.log(this.$el.textContent) // This is title, we can access it after beforeMount()
         }
-    })
+    }
 </script>

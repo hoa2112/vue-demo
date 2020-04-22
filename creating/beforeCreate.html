@@ -10,7 +10,10 @@
 <script src="https://unpkg.com/vue/dist/vue.js"></script>
 
 <div id="myText">
-    This is my text
+    {{ message }}
+
+    <br>
+    {{ a }}
 </div>
 
 
@@ -18,9 +21,11 @@
     new Vue({
         el: "#myText",
         data: {
-            message: 'Hello World'
+            message: 'Hello World',
+            a : '',
         },
         beforeCreate: function() {
+            this.a = this.message;
             console.log(this.message)
         }
     })

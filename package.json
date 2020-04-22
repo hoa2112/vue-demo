@@ -1,0 +1,28 @@
+{
+  "name": "vue-demo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "home.js",
+  "private": true,
+  "dependencies": {
+    "vue": "^2.6.11"
+  },
+  "devDependencies": {
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js",
+    "webdriver-update": "webdriver-manager update"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hoa2112/vue-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hoa2112/vue-demo/issues"
+  },
+  "homepage": "https://github.com/hoa2112/vue-demo#readme",
+}
